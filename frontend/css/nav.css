@@ -1,0 +1,359 @@
+/* --- HEADER & NAVBAR --- */
+header {
+  background-color: #000;
+  padding: 20px 40px;
+  border: 2px solid #18c6f6;
+  border-radius: 4rem;
+  box-shadow: 0 2px 6px #18c6f6;
+  margin: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+#logo {
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  justify-content: left;
+  text-align: left;
+  margin-left: -20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- Search Inputs & Buttons (Desktop + Mobile) --- */
+nav .box input,
+.mobile-menu input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #18c6f6;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
+  outline: none;
+}
+
+nav .box button,
+.mobile-menu button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #18c6f6;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+nav .box button:hover,
+.mobile-menu button:hover {
+  background-color: #078fb4;
+}
+
+/* --- Autofill Fix (Chrome/Safari) --- */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* --- Nav Links --- */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 6px 12px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #18c6f6;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #18c6f6;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* --- User Circle --- */
+.user-circle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  cursor: default;
+}
+
+/* --- POPUP & OVERLAY --- */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  padding: 35px;
+  background-color: rgba(10,10,10,0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid #18c6f6;
+  border-radius: 12px;
+  display: none;
+  z-index: 10;
+  text-align: center;
+}
+
+.popup h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #18c6f6;
+}
+
+.popup form input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  background-color: #000;
+  border: 1px solid #18c6f6;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.popup form input:focus {
+  outline: none;
+  border-color: #18c6f6;
+  box-shadow: 0 0 5px #18c6f6;
+}
+
+.popup form button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #078fb4;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.popup form button:hover {
+  background-color: #18c6f6;
+}
+
+.popup p {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.popup p a {
+  color: #18c6f6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.popup p a:hover {
+  text-decoration: underline;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+/* --- Mobile Navbar & Hamburger --- */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+  position: relative;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  right: -80%;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);;
+  padding: 20px;
+  z-index: 999;
+  transition: right 0.3s ease;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.close-mobile {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Mobile User Info */
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.mobile-user-info .user-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Auth Buttons (Mobile) */
+.mobile-auth button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #18c6f6;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mobile-auth button:hover {
+  background-color: #078fb4;
+}
+
+/* Mobile Nav Links */
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mobile-nav-links li a:hover {
+  color: #18c6f6;
+}
+/* Password field wrapper */
+.popup form div {
+  position: relative;
+  width: 100%;
+}
+
+.popup form input[type="password"] {
+  padding-right: 40px; /* right me jagah eye button ke liye */
+  box-sizing: border-box;
+}
+
+/* Eye button styling */
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 35%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #707070;
+  font-size: 18px;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    margin-right: -65px;
+  }
+  .mobile-search {
+    display: flex;
+    gap: 8px; /* input aur button ke beech space */
+    align-items: center;
+  }
+
+  .mobile-search input {
+    flex: 1; /* input width maximum le le */
+  }
+
+  .mobile-search button {
+    flex: 0; /* button apni natural width */
+  }
+}

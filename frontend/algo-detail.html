@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithm Details | Code Animator</title>
+  <link rel="stylesheet" href="css/algo-detail.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="algo-title">Loading Algorithm...</h1>
+
+    <div class="top-section">
+      <div class="code-container">
+        <pre id="code-section"></pre> 
+        <div class="code-buttons">
+          <button id="prevLine">Previous</button>
+          <button id="nextLine">Next</button>
+        </div>
+      </div>
+
+      <div class="visual-box" id="visual-section">
+        <iframe id="visual-frame" width="100%" height="500" style="border:1px solid #444444;"></iframe>
+      </div>
+      
+    </div>
+
+    <div class="explanation-section" id="explanation-section">
+    </div>
+  </div>
+
+  <div class="feedback-section">
+    <h2>💬 Provide Your Feedback</h2>
+    <form id="feedbackForm">
+      <input type="hidden" id="userId" value="" />
+      <input type="hidden" id="algorithmId" value="" />
+      <textarea id="feedbackText" placeholder="Write your feedback..." required></textarea>
+      <button type="submit">Submit</button>
+      <p id="feedbackMsg"></p>
+    </form>
+  </div>
+
+  <script src="js/algo-detail.js"></script>
+</body>
+</html>

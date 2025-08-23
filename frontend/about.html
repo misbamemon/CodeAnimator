@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us | Code Animator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+  </head>
+  <body>
+    <header>
+      <div class="box">
+        <span id="logo"> &lt;/&gt; Code Animator </span>
+        <span class="hamburger">&#9776;</span>
+        <nav>
+          <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="algorithm.html">ALGORITHMS</a></li>
+            <li><a href="about.html" class="active">ABOUT</a></li>
+            <li>
+              <a href="#" id="show-login-nav">LOGIN/REGISTER</a>
+              <div id="user-initial-display" class="user-circle"></div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <span class="close-mobile">&times;</span>
+      <div id="mobile-user-info" class="mobile-user-info" style="display: none;">
+          <div id="mobile-user-circle" class="user-circle"></div> 
+          <span id="mobile-user-email"></span> 
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="home.html" class="active">HOME</a></li>
+        <li><a href="algorithm.html">ALGORITHMS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li id="mobile-login-link"><a href="#">LOGIN/REGISTER</a></li>
+        <li id="logout"><a href="#">LOGOUT</a></li>
+      </ul>
+    </div>
+    <!-- About Content -->
+    <section class="about-section">
+      <h2>Introduction</h2>
+      <p>Code Animator is a web-based tool to help students visualize sorting and searching algorithms for better understanding using animations.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Purpose</h2>
+      <p>To simplify algorithm learning through real-time visuals and interactive explanations, making it easier for beginners.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Visualize sorting and searching algorithms</li>
+        <li>Step-by-step code highlighting</li>
+        <li>Interactive explanations</li>
+        <li>User-friendly interface</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Future Goals</h2>
+      <ul>
+        <li>Add graph and tree algorithms</li>
+        <li>Enhance user interactivity</li>
+        <li>Login-based customizations</li>
+        <li>Community feedback system</li>
+      </ul>
+    </section>
+
+    <section class="about-section developer">
+      <h2>Developed By</h2>
+      <p><strong>Misba Memon</strong><br>Final year BBA-CA student<br>Frontend & Backend Developer<br>- Made by Learner, for Learners -</p>
+    </section>
+
+    <!-- Login/Register Popups -->
+    <div id="overlay"></div>
+    <div id="login-popup" class="popup">
+      <span class="close-btn">&times;</span>
+      <h2>Login</h2>
+      <form id="loginform" action="/login" method="POST">
+        <input id="login-email" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+        <div style="position: relative;">
+          <input id="login-password" name="password" type="password" placeholder="Enter your password" required autocomplete="current-password" />
+          <i class="fa-solid fa-eye-slash eye-btn"></i>
+          </div>
+        <button type="submit">Login</button>
+        <p>
+          Don't have an account?
+          <a href="#" id="show-register-link">Register here</a>
+        </p>
+      </form>
+    </div>
+
+    <div id="register-popup" class="popup">
+      <span class="close-btn">&times;</span>
+      <h2>Register</h2>
+      <form id="registerform" action="/register" method="POST">
+        <input id="username" name="name" type="text" placeholder="Enter your name" required autocomplete="name" />
+        <input id="email" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+        <div style="position: relative;">
+          <input id="password" name="password" type="password" placeholder="Create your password" required autocomplete="new-password" />
+          <i class="fa-solid fa-eye-slash eye-btn"></i>
+          </div>
+        <button type="submit">Register</button>
+        <p>
+          Already have an account?
+          <a href="#" id="show-login-link">Login here</a>
+        </p>
+      </form>
+    </div>
+    <div id="notification" class="notification"></div>
+    <script src="js/register.js"></script>
+  </body>
+</html>

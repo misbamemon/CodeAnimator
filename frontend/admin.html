@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Animator - Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <script defer src="js/admin.js"></script>
+</head>
+<body>
+  <nav class="admin-nav">
+    <h1>Admin Panel</h1>
+    <span id="admin-info"></span>
+    <button id="admin-logout">Logout</button>
+  </nav>
+
+  <main>
+    <!-- Users Section -->
+    <section class="section" id="users-section">
+      <h2>Users List</h2>
+      <table id="users-table">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Email</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="section" id="feedback-section">
+      <h2>Feedbacks</h2>
+      <table id="feedback-table">
+        <thead>
+          <tr><th>ID</th><th>User</th><th>Algorithm</th><th>Feedback</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Algorithm Section -->
+    <section class="section" id="algorithm-section">
+      <h2>Manage Algorithms</h2>
+      <form id="algorithm-form" enctype="multipart/form-data">
+        <input type="hidden" id="algoId">
+        
+        <label>Algorithm Name</label>
+        <input type="text" id="algoName" name="name" required>
+
+        <label>Algorithm Code</label>
+        <textarea id="algoCode" name="code" required></textarea>
+
+        <label>Upload Algorithm Image</label>
+        <input type="file" id="algoImage" name="image" accept="image/*" required>
+
+        <label>Explanation</label>
+        <textarea id="algoExplanation" name="explanation" required></textarea>
+
+        <label>Upload Visualization Files</label>
+        <input type="file" id="algoVisualHtml" accept=".html" required>
+        <input type="file" id="algoVisualCss" accept=".css" required>
+        <input type="file" id="algoVisualJs" accept=".js" required>
+
+        <button type="submit">Save Algorithm</button>
+      </form>
+
+      <table id="algorithm-table">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

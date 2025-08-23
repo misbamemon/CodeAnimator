@@ -1,0 +1,234 @@
+/* --- Global Styles & Dark Theme --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Ensures padding doesn't affect final dimensions */
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d1117;
+  /* A softer black */
+  color: #c9d1d9;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+#algo-title {
+  text-align: center;
+  color: #18c6f6;
+  margin-bottom: 30px;
+}
+
+/* --- Main Layout --- */
+.top-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Left Side: Code Container */
+.code-container {
+  flex: 1;
+  /* Takes 50% of the space */
+  display: flex;
+  flex-direction: column;
+  /* Stacks code on top of buttons */
+  border: 1px solid #18c6f6;
+  border-radius: 8px;
+  background-color: #0d1117;
+  overflow: hidden;
+  /* Important for border-radius */
+}
+
+/* Code Area with Notebook Lines */
+#code-section {
+  display: inline-block;
+  height: 400px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  line-height: 27px;
+  color: #c9d1d9;
+  padding: 15px 10px;
+  white-space: pre;
+  overflow-y: auto;
+  flex-grow: 1;
+  background: none;
+  /* Remove background lines */
+  counter-reset: line;
+  min-width: 100%;
+}
+
+#code-section::-webkit-scrollbar,
+.visual-box::-webkit-scrollbar,
+.explanation-section::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Individual Line of Code (to be created by your JS) */
+#code-section span {
+  display: block;
+  position: relative;
+  padding-left: 65px;
+  border-bottom: 1px solid #575b5d;
+  width: fit-content;
+  min-width: 100%;
+  /* this creates the "line" */
+}
+
+/* Line Number */
+#code-section span::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 25px;
+  /* shift number right so arrow fits on left */
+  width: 25px;
+  text-align: right;
+  color: #8b949e;
+  z-index: 2;
+  /* number above arrow */
+}
+
+/* The Arrow for the Current Line */
+#code-section span.current-line {
+  background-color: rgba(56, 139, 253, 0.15);
+  position: relative;
+  padding-left: 45px;
+  /* same padding so number aligns */
+}
+
+#code-section span.current-line::before {
+  content: "→";
+  color: #58a6ff;
+  font-weight: bold;
+  position: absolute;
+  left: 0px;
+  /* arrow on very left */
+  width: 20px;
+  /* space for arrow */
+  text-align: center;
+  z-index: 1;
+  /* behind number */
+}
+
+/* Prev/Next Buttons */
+.code-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px;
+  background-color: #161b22;
+  border-top: 1px solid #30363d;
+}
+
+.code-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  cursor: pointer;
+  background-color: #21262d;
+  color: #c9d1d9;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.code-buttons button:hover {
+  background-color: #30363d;
+  border-color: #8b949e;
+}
+
+/* Right Side: Visualization */
+.visual-box {
+  height: 500px;
+  flex: 1;
+  /* Takes 50% of the space */
+  border: 1px solid #18c6f6;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #161b22;
+  overflow: auto;
+}
+
+/* --- Bottom Sections --- */
+.explanation-section {
+  height: 500px;
+  white-space: pre-wrap;
+  padding: 20px;
+  border: 1px solid #18c6f6;
+  border-radius: 8px;
+  background-color: #161b22;
+  min-height: 100px;
+  overflow-y: auto;
+}
+
+.feedback-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #161b22;
+  border: 1px solid #18c6f6;
+}
+
+.feedback-section h2 {
+  color: #18c6f6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#feedbackText {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-top: 10px;
+  color: #c9d1d9;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#feedbackText:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
+}
+
+#feedbackForm button {
+  background-color: #238636;
+  color: white;
+  border: 1px solid #2ea043;
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+#feedbackForm button:hover {
+  background-color: #2ea043;
+}
+
+/* --- Responsiveness for Mobile --- */
+@media (max-width: 800px) {
+  .top-section {
+    flex-direction: column;
+    /* Stack code and visualizer vertically */
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .feedback-section {
+    padding: 10px;  /* increase inner space */
+    margin: 10px;   /* add space outside the border */
+  }
+}

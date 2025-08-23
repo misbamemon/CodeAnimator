@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #111;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #array-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    gap: 20px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .index-box {
+    font-weight: bold;
+    color: yellow;
+    margin-bottom: 5px;
+    width: 60px;
+    text-align: center;
+  }
+  
+  .array-box {
+    width: 60px;
+    height: 60px;
+    background: #444;
+    border: 2px solid #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    user-select: none;
+    font-size: 20px;
+  }
+  
+  .swap {
+    background-color: orange !important;
+    transition: background-color 0.3s;
+  }
+  
+  #variables {
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  #message-box {
+    height: 24px;       /* fixed height enough for your messages */
+    margin: 10px 0;
+    font-weight: bold;
+    color: cyan;
+    overflow: hidden;   /* prevents layout change if message is longer */
+  }
+  .var-box {
+    width: 80px;
+    height: 40px;
+    background: #222;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #555;
+    user-select: none;
+  }
+  
+  #arrows-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 80px;
+    position: relative;
+  }
+  .arrow {
+    font-size: 24px;
+    color: yellow;
+    position: relative;
+  }
+  
+  .arrow-text {
+    font-size: 14px;
+    margin-top: 5px;
+    color: cyan;
+    user-select: none;
+  }
+  @media screen and (max-width: 480px) {
+  #array-container {
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .index-box{
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .array-box {
+    margin-top: 0px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+
+  .index-box {
+    font-size: 14px;
+  }
+
+  .var-box {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  #message-box {
+    font-size: 14px;
+    height: 20px;
+  }
+
+  #arrows-container {
+    gap: 30px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+
+  .arrow-text {
+    font-size: 12px;
+  }
+}

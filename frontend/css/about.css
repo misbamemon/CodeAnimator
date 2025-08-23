@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* About sections */
+.about-section {
+  background-color: #121212;
+  color: #ffffff;
+  max-width: 900px;
+  width: 90%; /* Mobile friendly */
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px #18c6f6;
+  border: 1px solid #18c6f6;
+}
+
+/* Headings */
+.about-section h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #18c6f6;
+}
+
+/* Paragraph */
+.about-section p {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  color: #dddddd;
+}
+
+/* Lists */
+.about-section ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #cccccc;
+}
+
+.about-section ul li {
+  margin-bottom: 10px;
+}
+
+/* Developer section */
+.developer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.developer p {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* User circle for desktop navbar */
+#user-initial-display {
+  display: none; /* Initially hidden */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  display: none;
+  z-index: 9999;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+  animation: fadeinout 3s ease;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 30px;
+    width: 80%;
+  }
+
+  .about-section h2 {
+    font-size: 26px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+  }
+}

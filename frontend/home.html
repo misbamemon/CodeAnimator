@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Animator</title>
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="box">
+            <span id="logo">&lt;/&gt; Code Animator</span>
+            <span class="hamburger">&#9776;</span>
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="active">HOME</a></li>
+                    <li><a href="algorithm.html">ALGORITHMS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li>
+                        <a href="#" id="show-login-nav">LOGIN/REGISTER</a>
+                        <div id="user-initial-display"></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-menu">
+      <span class="close-mobile">&times;</span>
+      <div id="mobile-user-info" class="mobile-user-info" style="display: none;">
+          <div id="mobile-user-circle" class="user-circle"></div> 
+          <span id="mobile-user-email"></span> 
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="home.html" class="active">HOME</a></li>
+        <li><a href="algorithm.html">ALGORITHMS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li id="mobile-login-link"><a href="#">LOGIN/REGISTER</a></li>
+        <li id="logout"><a href="#">LOGOUT</a></li>
+      </ul>
+    </div>
+    <!-- Main Section -->
+    <main>
+        <div class="main-container">
+            <div class="left">
+                <h1 id="heading">Learn DSA Algorithms With Animation</h1>
+                <pre>
+Code Animator helps you understand sorting and searching algorithms
+using real-time animations.
+Visualize code step-by-step, understand logic easily, and master DSA
+in a fun way - all in one place.
+                </pre>
+                <button id="show-login-main">Let's Start</button>
+            </div>
+            <div class="right"></div>
+        </div>
+    </main>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <video autoplay loop muted controls class="section-video">
+            <source src="intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback">
+        <h2>What Our Users Say</h2>
+        <div class="feedback-container">
+            <div class="feedback-card">
+                <p>"This tool is amazing for visualizing sorting algorithms. It made my DSA concepts crystal clear!"</p>
+                <h4>- Priya Sharma</h4>
+            </div>
+            <div class="feedback-card">
+                <p>"As a beginner, I always struggled with searching algorithms. Code Animator's step-by-step animation helped me finally get it."</p>
+                <h4>- Rahul Verma</h4>
+            </div>
+            <div class="feedback-card">
+                <p>"The best way to learn data structures. Simple, intuitive, and very effective. Highly recommended!"</p>
+                <h4>- Anjali Singh</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2 style="text-align: left">FAQ</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is Code Animator free to use?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Code Animator is completely free for all users. Our goal is to make learning accessible for everyone.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Which algorithms can I visualize?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Currently, we support sorting and searching like Bubble Sort, selection Sort, insertion sort, Binary Search, and more. We are constantly adding new ones!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need to register or log in to use Code Animator?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, for accessing algorithms you have to register and login.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I request new algorithms to be added?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! You can send feedback with your suggestions for new algorithms to include.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>In which programming language are the algorithm codes written?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The algorithm codes are written in C++.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Code Animator</h3>
+            <p>Your go-to place for understanding complex algorithms with simple animations.</p>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;2025 CodeAnimator. Designed by <span>Misba Memon</span></p>
+        </div>
+    </footer>
+
+    <!-- Login & Registration Popups -->
+    <div id="overlay"></div>
+
+    <div id="login-popup" class="popup">
+        <span class="close-btn">&times;</span>
+        <h2>Login</h2>
+        <form id="loginform" action="/login" method="POST">
+            <input id="login-email" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+            <div style="position: relative;">
+                <input id="login-password" name="password" type="password" placeholder="Enter your password" required autocomplete="current-password" />
+                <i class="fa-solid fa-eye-slash eye-btn"></i>
+            </div>
+            <button type="submit">Login</button>
+            <p>Don't have account? <a href="#" id="show-register-link">Register here</a></p>
+        </form>
+    </div>
+
+    <div id="register-popup" class="popup">
+        <span class="close-btn">&times;</span>
+        <h2>Register</h2>
+        <form id="registerform" action="/register" method="POST">
+            <input id="username" name="name" type="text" placeholder="Enter your name" required autocomplete="name" />
+            <input id="email" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+            <div style="position: relative;">
+                <input id="password" name="password" type="password" placeholder="Create your password" required autocomplete="new-password" />
+                <i class="fa-solid fa-eye-slash eye-btn"></i>
+            </div>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="#" id="show-login-link">Login here</a></p>
+        </form>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/register.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
