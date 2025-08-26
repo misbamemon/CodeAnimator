@@ -1,18 +1,21 @@
 const mysql = require('mysql');
+require('dotenv').config();
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,       // Railway MySQL host
-  user: process.env.DB_USER,       // Railway MySQL user
-  password: process.env.DB_PASSWORD, // Railway MySQL password
-  database: process.env.DB_NAME    // Railway MySQL database name
+  host: process.env.AWS_DB_HOST,       // AWS RDS endpoint
+  user: process.env.AWS_DB_USER,       // Master username
+  password: process.env.AWS_DB_PASSWORD, // Master password
+  database: process.env.AWS_DB_NAME    // Your DB name
 });
 
 db.connect((err) => {
   if (err) {
-    console.error('❌ DB Connection Error:', err);
+    console.error('❌ AWS DB Connection Error:', err);
   } else {
-    console.log('✅ Connected to Railway MySQL DB');
+    console.log('✅ Connected to AWS RDS MySQL DB');
   }
 });
+
+module.exports = db;
 
 module.exports = db;
